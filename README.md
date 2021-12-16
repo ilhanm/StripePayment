@@ -42,3 +42,4 @@ Payment details should be valid
 
 ![05_stripescreen](https://user-images.githubusercontent.com/38858819/146416154-f1eb2030-0d19-4c19-852f-cb965c4b223d.png)
 
+After a successfull payment we can check it on stripe website like above screenshot.
