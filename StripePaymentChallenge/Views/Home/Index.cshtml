@@ -1,0 +1,27 @@
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<StripePaymentChallenge.Data.StripeSettings> Stripe
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    
+     <form asp-action="Charge" asp-controller="Home" method="POST">
+
+         <article>
+             <p>Simple Pencil</p>             
+             <img id="img_logo" alt="Logo" style="width: 100px; height: 100px; border: 1px solid #555;"  src="https://cdn.bkmkitap.com/stabilo-pencil-88-mercanli-kursun-kalem-285-2b-88-51008988-8025994-37-O.jpg" />
+             <br />
+             <label>Amount: $1.50</label>
+         </article>
+         <script src="//checkout.stripe.com/v2/checkout.js"
+             class="stripe-button"             
+             data-key="@Configuration.GetSection("Stripe")["PublishableKey"]"
+             data-locale="auto"
+             data-description="Your Payment Details">
+             
+         </script>
+     </form>
+</div>
